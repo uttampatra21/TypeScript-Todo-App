@@ -33,20 +33,18 @@ const insertTodo = (todos: Todo[]) => {
   todos.map((items) => {
     todoContainer.innerHTML += genarateTodosItems(items);
   });
+
+  const deletTodo = document.getElementById("removeTodo") as HTMLDivElement;
+  deletTodo.onclick = () => {};
 };
 
 const genarateTodosItems = (items: any) => {
   return `
-              <div class="flex mb-4 items-center">
-                <p class="w-full text-grey-darkest">
-                  ${items.title}
-                </p>
-                <button
-                id="removeTodo"
-                  class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red"
-                >
-                  Remove
-                </button>
-              </div>
+          <div class="flex mb-4 items-center">
+            <p class="w-full text-grey-darkest">${items.title}</p>
+            <div id="removeTodo" class="flex-no-shrink p-2 ml-2 border-2 rounded text-red border-red">
+            Remove
+            </div>
+          </div>
   `;
 };
